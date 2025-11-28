@@ -19,4 +19,8 @@ return {
       }
     end,
   },
+  {
+    "rushjs1/nuxt-goto.nvim",
+    ft = "vue",
+  },
 }
