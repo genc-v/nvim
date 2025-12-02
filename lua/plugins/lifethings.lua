@@ -12,21 +12,18 @@ return {
   },
   {
     "debugloop/telescope-undo.nvim",
-    dependencies = { -- note: optimal dependency section
-      {
-        "nvim-telescope/telescope.nvim",
-        dependencies = { "nvim-lua/plenary.nvim" },
-      },
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+      "nvim-lua/plenary.nvim",
     },
     keys = {
-      { -- lazy style key map
+      {
         "<leader>su",
         "<cmd>Telescope undo<cr>",
         desc = "Undo History",
       },
     },
     opts = {
-      -- specific configuration for telescope-undo goes here
       extensions = {
         undo = {
           side_by_side = true,
@@ -38,9 +35,21 @@ return {
       },
     },
     config = function(_, opts)
-      -- Calling telescope-undo.setup with extension-specific config
       require("telescope").setup(opts)
       require("telescope").load_extension("undo")
+    end,
+  },
+  -- Add this for projects
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      "nvim-telescope/telescope-project.nvim",
+    },
+    keys = {
+      { "<leader>fp", "<cmd>Telescope project<CR>", desc = "Projects" },
+    },
+    config = function()
+      require("telescope").load_extension("project")
     end,
   },
 }
