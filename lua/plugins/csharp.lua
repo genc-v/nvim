@@ -27,19 +27,19 @@ return {
     cmd = "DotnetUI",
     opts = {},
   },
-  {
-    "GustavEikaas/easy-dotnet.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
-    config = function()
-      local dotnet = require("easy-dotnet")
-      dotnet.setup({
-        -- Optional: Enable "Rider-like" features
-        test_runner = {
-          viewmode = "float",
-        },
-      })
-    end,
-  },
+  -- {
+  --   "GustavEikaas/easy-dotnet.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope.nvim" },
+  --   config = function()
+  --     local dotnet = require("easy-dotnet")
+  --     dotnet.setup({
+  --       -- Optional: Enable "Rider-like" features
+  --       test_runner = {
+  --         viewmode = "float",
+  --       },
+  --     })
+  --   end,
+  -- },
   {
     "smoka7/hop.nvim",
     version = "*",
